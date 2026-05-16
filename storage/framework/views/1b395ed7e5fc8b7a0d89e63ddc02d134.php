@@ -8,42 +8,100 @@
 
     
     <section data-aos="fade-up" data-aos-duration="1000">
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
 
                 <?php
                     $slides = [
                         [
                             'img' => 'washintone-event-mc-in-action.jpg',
-                            'label' => '7 Years of Experience',
+                            'label' => '10+ Years of Experience',
                             'line1' => 'Your Event Deserves',
                             'line2' => 'the Best',
                             'accent' => 'MC',
                             'desc' =>
-                                'Energetic, professional and unforgettable - Washingtone turns every event into an experience.',
-                            'cta' => 'Book Washingtone',
+                                'Energetic, professional and unforgettable - Washingtone turns every event into an experience your guests will never forget.',
+                            'cta' => 'Book Corporate MC',
                             'cta_link' => 'contact.index',
+                            'cta2' => 'View Rate Card',
+                            'cta2_link' => 'rate-card',
+                            'badge_bg' => 'bg-primary',
+                            'tag' => 'Corporate MC',
+                        ],
+                        [
+                            'img' => 'washingtone-oruko-in-baby-shower-mc.jpg',
+                            'label' => 'Weddings · Baby Showers · Private Events',
+                            'line1' => 'Making Your Special',
+                            'line2' => 'Day Truly',
+                            'accent' => 'Unforgettable',
+                            'desc' =>
+                                'From intimate baby showers to grand weddings - Washingtone hosts your most cherished moments with warmth, elegance and flair.',
+                            'cta' => 'Book for My Event',
+                            'cta_link' => 'contact.index',
+                            'cta2' => 'View Rate Card',
+                            'cta2_link' => 'rate-card',
+                            'badge_bg' => 'bg-danger',
+                            'tag' => 'Wedding & Private MC',
                         ],
                         [
                             'img' => 'washingtone-doing-team-building.jpg',
-                            'label' => '70+ Corporate Sessions',
+                            'label' => '70+ Corporate Sessions Facilitated',
                             'line1' => 'Transform Your Team.',
                             'line2' => 'Elevate Your',
                             'accent' => 'Results.',
-                            'desc' => 'Over 70 corporate team building sessions that produce real, measurable change.',
-                            'cta' => 'Book Washingtone',
+                            'desc' =>
+                                'Over 70 corporate team building sessions designed to boost morale, improve communication and unlock peak team performance.',
+                            'cta' => 'Book Team Building',
                             'cta_link' => 'contact.index',
+                            'cta2' => 'Learn More',
+                            'cta2_link' => 'services.index',
+                            'badge_bg' => 'bg-success',
+                            'tag' => 'Team Building',
+                        ],
+                        [
+                            'img' => 'washingtone-talks-in-highschool.jpg',
+                            'label' => 'Schools · Universities · Youth Groups',
+                            'line1' => 'Igniting Purpose',
+                            'line2' => 'in Every',
+                            'accent' => 'Young Mind.',
+                            'desc' =>
+                                'Powerful motivational talks that challenge young people to discover their WHY, define their goals and take intentional action.',
+                            'cta' => 'Book a Youth Talk',
+                            'cta_link' => 'contact.index',
+                            'cta2' => 'My Services',
+                            'cta2_link' => 'services.index',
+                            'badge_bg' => 'bg-warning',
+                            'tag' => 'Youth Talks',
+                        ],
+                        [
+                            'img' => 'washingtone-dancing-with-people-in-blue.jpg',
+                            'label' => 'Kenya National Theatre',
+                            'line1' => 'Move. Express.',
+                            'line2' => 'Discover Your',
+                            'accent' => 'Rhythm.',
+                            'desc' =>
+                                'Professional dance classes for kids, youth and adults - from traditional to contemporary styles. Available at Kenya National Theatre and on location.',
+                            'cta' => 'Join Dance Classes',
+                            'cta_link' => 'contact.index',
+                            'cta2' => 'View Rate Card',
+                            'cta2_link' => 'rate-card',
+                            'badge_bg' => 'bg-info',
+                            'tag' => 'Dance Classes',
                         ],
                         [
                             'img' => 'washingtone-oruko-on-stage-singing-3-main.jpg',
                             'label' => 'Life Coach · Author · Speaker',
-                            'line1' => 'I am Here',
-                            'line2' => 'To Make Your',
-                            'accent' => 'Day',
+                            'line1' => 'Realign Your',
+                            'line2' => 'Compass. Own Your',
+                            'accent' => 'Story.',
                             'desc' =>
-                                'Author of Realign Your Compass - helping individuals discover purpose, clarity and direction.',
-                            'cta' => 'My Biography',
-                            'cta_link' => 'biography',
+                                'Author of Realign Your Compass - coaching individuals to discover purpose, set meaningful goals and live with intention.',
+                            'cta' => 'Get My Book',
+                            'cta_link' => 'store.index',
+                            'cta2' => 'My Biography',
+                            'cta2_link' => 'biography',
+                            'badge_bg' => 'bg-primary',
+                            'tag' => 'Life Coaching & Book',
                         ],
                     ];
                 ?>
@@ -51,11 +109,17 @@
                 <?php $__currentLoopData = $slides; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="carousel-item <?php echo e($index === 0 ? 'active' : ''); ?>">
                         <div class="container py-5">
-                            <div class="row align-items-center min-vh-75 g-4 py-4">
+                            <div class="row align-items-center g-4 py-4" style="min-height: 80vh;">
 
                                 
                                 <div class="col-12 col-lg-6">
-                                    <p class="text-uppercase fw-bold text-secondary small ls-wider mb-3">
+                                    
+                                    <span class="badge <?php echo e($slide['badge_bg']); ?> text-white px-3 py-2 mb-3 rounded-pill">
+                                        <?php echo e($slide['tag']); ?>
+
+                                    </span>
+                                    <p class="text-uppercase fw-bold text-secondary small mb-2"
+                                        style="letter-spacing:.08em;">
                                         <?php echo e($slide['label']); ?>
 
                                     </p>
@@ -70,18 +134,37 @@
                                         <?php echo e($slide['desc']); ?>
 
                                     </p>
-                                    <a href="<?php echo e(route($slide['cta_link'])); ?>"
-                                        class="btn btn-primary btn-lg px-4 fw-semibold">
-                                        <?php echo e($slide['cta']); ?>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <a href="<?php echo e(route($slide['cta_link'])); ?>"
+                                            class="btn btn-primary btn-lg px-4 rounded-pill fw-semibold">
+                                            <?php echo e($slide['cta']); ?>
 
-                                    </a>
+                                        </a>
+                                        <a href="<?php echo e(route($slide['cta2_link'])); ?>"
+                                            class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+                                            <?php echo e($slide['cta2']); ?>
+
+                                        </a>
+                                    </div>
                                 </div>
 
                                 
                                 <div class="col-12 col-lg-6 d-flex justify-content-center">
-                                    <img src="<?php echo e(asset('images/' . $slide['img'])); ?>" alt="Washingtone Oruko"
-                                        class="rounded-circle object-fit-cover border border-4 border-light shadow"
-                                        style="width: 380px; height: 380px;">
+                                    <div class="position-relative">
+                                        
+                                        <div class="position-absolute top-50 start-50 translate-middle rounded-circle border border-5 border-primary opacity-25"
+                                            style="width:410px; height:410px;"></div>
+                                        <img src="<?php echo e(asset('images/' . $slide['img'])); ?>" alt="Washingtone Oruko"
+                                            class="rounded-circle object-fit-cover border border-4 border-white shadow position-relative"
+                                            style="width:370px; height:370px; z-index:1;">
+                                        
+                                        <span
+                                            class="position-absolute bottom-0 end-0 badge <?php echo e($slide['badge_bg']); ?> text-white px-3 py-2 rounded-pill shadow"
+                                            style="z-index:2; font-size:.8rem;">
+                                            <i class="fas fa-check-circle me-1"></i><?php echo e($slide['tag']); ?>
+
+                                        </span>
+                                    </div>
                                 </div>
 
                             </div>
@@ -91,16 +174,13 @@
 
             </div>
 
+
+
             
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            
+
         </div>
     </section>
-
     
     <section class="py-5 bg-white overflow-hidden">
         <div class="container">
@@ -369,7 +449,7 @@
                 <div class="text-center mb-5">
                     <span class="badge bg-warning text-dark mb-2 px-3 py-2">Transparent Pricing</span>
                     <h2 class="fw-bold text-white">Rate Card Highlights</h2>
-                    <p class="text-white-75">Clear, competitive pricing for every occasion</p>
+                    <p class="text-white">Clear, competitive pricing for every occasion</p>
                 </div>
                 <div class="row g-4 justify-content-center">
                     <?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pkg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -475,6 +555,159 @@
             </div>
         </div>
     </section>
+
+    
+    <section class="py-5 bg-white overflow-hidden" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary text-white mb-2 px-3 py-2">Testimonials</span>
+                <h2 class="fw-bold text-primary">What People Say</h2>
+                <p class="text-muted">Real experiences from real people across Kenya</p>
+            </div>
+        </div>
+
+        <?php
+            $reviews = [
+                [
+                    'name' => 'James Mwangi',
+                    'role' => 'HR Director, KCB Bank',
+                    'review' =>
+                        'Washingtone brought an incredible energy to our annual staff gala. The entire evening flowed flawlessly - he kept everyone engaged and the night was truly memorable.',
+                    'initial' => 'J',
+                    'color' => 'bg-primary',
+                ],
+                [
+                    'name' => 'Grace Wanjiku',
+                    'role' => 'CEO, Quest Holdings',
+                    'review' =>
+                        'We hired Washingtone for our team building retreat and the transformation we saw in our team was remarkable. His facilitation style is engaging, fun and deeply purposeful.',
+                    'initial' => 'G',
+                    'color' => 'bg-success',
+                ],
+                [
+                    'name' => 'Peter Oloo',
+                    'role' => 'Events Coordinator, Kenya Utalii College',
+                    'review' =>
+                        'Professional from start to finish. Washingtone understood our brand, our audience and delivered a performance that exceeded every expectation. We will definitely book him again.',
+                    'initial' => 'P',
+                    'color' => 'bg-warning',
+                ],
+                [
+                    'name' => 'Mercy Achieng',
+                    'role' => 'Bride, Nairobi',
+                    'review' =>
+                        'Our wedding was absolutely perfect. Washingtone kept the energy alive all day, handled our guests beautifully and made sure every moment felt special. Thank you!',
+                    'initial' => 'M',
+                    'color' => 'bg-danger',
+                ],
+                [
+                    'name' => 'David Kimani',
+                    'role' => 'Principal, Rock Solid Academy',
+                    'review' =>
+                        'The motivational talk Washingtone gave our students was life-changing. Several students came to me afterwards saying they finally knew what they wanted to do with their lives.',
+                    'initial' => 'D',
+                    'color' => 'bg-info',
+                ],
+                [
+                    'name' => 'Sarah Njeri',
+                    'role' => 'Operations Manager, Stima Sacco',
+                    'review' =>
+                        'Realign Your Compass arrived and I read it in two days. It asks the right questions and gives you the tools to answer them honestly. Every person needs this book.',
+                    'initial' => 'S',
+                    'color' => 'bg-primary',
+                ],
+                [
+                    'name' => 'Brian Otieno',
+                    'role' => 'Team Leader, Izwe Africa',
+                    'review' =>
+                        'After our team building session with Washingtone, the difference in how our team communicates and collaborates has been night and day. Highly recommended.',
+                    'initial' => 'B',
+                    'color' => 'bg-success',
+                ],
+                [
+                    'name' => 'Angela Mutua',
+                    'role' => 'Director, Batanique Naturelle',
+                    'review' =>
+                        'Washingtone MCed our product launch and completely owned the stage. He understood our brand perfectly and created an atmosphere that our guests are still talking about.',
+                    'initial' => 'A',
+                    'color' => 'bg-danger',
+                ],
+            ];
+            // Duplicate reviews so the marquee loops seamlessly
+            $loopedReviews = array_merge($reviews, $reviews);
+        ?>
+
+        
+        <div class="position-relative" style="overflow:hidden;">
+
+            
+            <div class="position-absolute top-0 start-0 h-100 z-1"
+                style="width:80px; background:linear-gradient(to right, #fff, transparent); pointer-events:none;"></div>
+            <div class="position-absolute top-0 end-0 h-100 z-1"
+                style="width:80px; background:linear-gradient(to left, #fff, transparent); pointer-events:none;"></div>
+
+            <div class="reviews-marquee d-flex gap-4 py-2" id="reviewsTrack"
+                style="width:max-content; animation: reviewsScroll 40s linear infinite;">
+                <?php $__currentLoopData = $loopedReviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $review): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="card border-0 shadow-sm flex-shrink-0" style="width:290px; border-radius:16px;">
+                        <div class="card-body p-4">
+                            
+                            <div class="mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            
+                            <p class="text-muted small mb-3" style="line-height:1.6;">
+                                "<?php echo e($review['review']); ?>"
+                            </p>
+                            
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="<?php echo e($review['color']); ?> text-white rounded-circle d-flex align-items-center justify-content-center fw-bold flex-shrink-0"
+                                    style="width:40px; height:40px; font-size:.95rem;">
+                                    <?php echo e($review['initial']); ?>
+
+                                </div>
+                                <div>
+                                    <div class="fw-semibold small"><?php echo e($review['name']); ?></div>
+                                    <div class="text-muted" style="font-size:.75rem;"><?php echo e($review['role']); ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+        </div>
+
+        
+        <div class="text-center mt-5">
+            <p class="text-muted mb-3">Had a great experience with Washingtone? We'd love to hear from you.</p>
+            <a href="<?php echo e(route('contact.index')); ?>" class="btn btn-primary px-5 rounded-pill fw-semibold">
+                <i class="fas fa-pen me-2"></i>Submit Your Review
+            </a>
+        </div>
+    </section>
+
+    <?php $__env->startSection('styles'); ?>
+        <?php echo \Illuminate\View\Factory::parentPlaceholder('styles'); ?>
+        <style>
+            @keyframes reviewsScroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            #reviewsTrack:hover {
+                animation-play-state: paused;
+            }
+        </style>
+    <?php $__env->stopSection(); ?>
 
     
     <?php if($blogs->count()): ?>

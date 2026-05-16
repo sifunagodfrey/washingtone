@@ -6,14 +6,14 @@
 
             
             <div class="d-flex align-items-center gap-3">
+                <span>
+                    <i class="fas fa-lightbulb me-1"></i>
+                    Inspired to make a difference
+                </span>
+
                 <span class="d-none d-md-inline">
                     <i class="fas fa-envelope me-1"></i>
                     <?php echo e($settings->site_email ?? 'info@washingtoneoruko.com'); ?>
-
-                </span>
-                <span>
-                    <i class="fas fa-phone me-1"></i>
-                    <?php echo e($settings->support_phone ?? '+254 700 000 000'); ?>
 
                 </span>
             </div>

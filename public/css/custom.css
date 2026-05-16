@@ -1,0 +1,971 @@
+/* ============================================================
+   Suweka Custom CSS Stylesheet
+   Project: Suweka (https://suweka.com)
+   Designer & Developer: Sifuna Godfrey (https://github.com/sifunagodfrey)
+   Copyright (c) 2025 Suweka. All rights reserved.
+   ------------------------------------------------------------
+   Description:
+   This stylesheet contains custom frontend overrides, layout
+   adjustments, and design components created exclusively for
+   the Suweka platform and its associated templates.
+   ------------------------------------------------------------
+   Unauthorized copying or distribution of this file, via any
+   medium, is strictly prohibited.
+============================================================ */
+
+/* ===== Import Lato Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* ===== Color Palette ===== */
+:root {
+    --primary-color: #2412bf;
+    --secondary-color: #f78b4d;
+    --tertiary-color: #E0F7FA;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --pale-grey: #f6f6f6;
+    --dark-grey: #333333;
+    --light-secondary-color: #c7830e7e;
+}
+
+/* ===== Body Styling ===== */
+body {
+    font-family: 'lato', sans-serif;
+    background-color: var(--pale-grey);
+    color: var(--black-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+/* -------------------
+GLOBAL SMOOTH SCROLL
+------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* -------------------
+BASE ANIMATION STATE
+(all animated elements start hidden)
+------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+/* -------------------
+VISIBLE STATE
+------------------- */
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------
+LEFT → RIGHT ENTRANCE
+------------------- */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.6s ease;
+}
+
+.reveal-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* -------------------
+RIGHT → LEFT ENTRANCE
+------------------- */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.6s ease;
+}
+
+.reveal-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* -------------------
+SUBTLE SCALE (CARDS)
+------------------- */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.96);
+    transition: all 0.5s ease;
+}
+
+.reveal-scale.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* -------------------
+STAGGER DELAYS (clean & reusable)
+------------------- */
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}
+/* ================================
+    Header Styling
+================================ */
+
+/* ===== Top Bar ===== */
+.top-bar {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 8px 0;
+}
+
+.top-bar a {
+    color: var(--pale-grey);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-bar a:hover {
+    color: var(--primary-color);
+}
+
+.top-bar .btn {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+    padding: 5px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.top-bar .btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+/* =====================================
+   ISOKONI ADMIN DARK MODE
+===================================== */
+
+/* Base page and text */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: var(--bs-light) !important;
+}
+
+/* Navbar and top bar */
+.dark-mode .navbar {
+    background-color: #1f1f1f !important;
+    color: var(--bs-light) !important;
+    border-color: #2a2a2a !important;
+}
+
+.dark-mode .navbar a {
+    color: var(--bs-light) !important;
+}
+
+/* Sidebar */
+.dark-mode .sidebar {
+    background-color: #1c1c1c !important;
+    color: var(--bs-light) !important;
+    border-color: #2a2a2a !important;
+}
+
+/* Sidebar links */
+.dark-mode .sidebar .list-group-item {
+    background-color: transparent !important;
+    color: var(--bs-light) !important;
+    border-color: #2b2b2b !important;
+}
+
+.dark-mode .sidebar .list-group-item i {
+    opacity: 0.9;
+}
+
+.dark-mode .sidebar .list-group-item:hover,
+.dark-mode .sidebar .list-group-item.active {
+    background-color: #2a2a2a !important;
+    color: var(--bs-primary) !important;
+    border-left: 3px solid var(--bs-primary) !important;
+}
+
+.dark-mode .sidebar .badge {
+    background-color: var(--bs-danger) !important;
+}
+
+/* Cards and tables */
+.dark-mode .card,
+.dark-mode .table {
+    background-color: #1e1e1e !important;
+    color: var(--bs-light) !important;
+    border-color: #333 !important;
+}
+
+.dark-mode .table thead th {
+    background-color: #2b2b2b !important;
+    color: var(--bs-light) !important;
+    border-color: #333 !important;
+}
+
+.dark-mode .table tbody tr:hover {
+    background-color: #2f2f2f !important;
+}
+
+/* Form controls */
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background-color: #2b2b2b !important;
+    color: var(--bs-light) !important;
+    border-color: #444 !important;
+}
+
+.dark-mode .form-control:focus,
+.dark-mode .form-select:focus {
+    background-color: #333 !important;
+    border-color: var(--bs-primary) !important;
+    box-shadow: none !important;
+}
+
+/* Buttons */
+.dark-mode .btn {
+    background-color: #2b2b2b !important;
+    color: var(--bs-light) !important;
+    border-color: #444 !important;
+}
+
+.dark-mode .btn:hover {
+    background-color: #333 !important;
+    color: var(--bs-light) !important;
+}
+
+/* Dropdown menus */
+.dark-mode .dropdown-menu {
+    background-color: #1f1f1f !important;
+    color: var(--bs-light) !important;
+    border-color: #2b2b2b !important;
+}
+
+.dark-mode .dropdown-item:hover {
+    background-color: #2a2a2a !important;
+    color: var(--bs-primary) !important;
+}
+
+/* Breadcrumb */
+.dark-mode .breadcrumb {
+    background-color: #1b1b1b !important;
+}
+
+.dark-mode .breadcrumb a {
+    color: var(--bs-primary) !important;
+}
+
+/* Borders and dividers */
+.dark-mode .border-bottom,
+.dark-mode .border-top,
+.dark-mode .border {
+    border-color: #333 !important;
+}
+
+/* Pagination */
+.dark-mode .page-link {
+    background-color: #1f1f1f !important;
+    color: var(--bs-light) !important;
+    border-color: #333 !important;
+}
+
+.dark-mode .page-item.active .page-link {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+/* Scrollbar */
+.dark-mode ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 4px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+}
+
+/* Smooth theme transition */
+body,
+.sidebar,
+.navbar,
+.card,
+.table,
+.form-control,
+.btn {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ================================
+   Default Color
+================================ */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.bg-secondary-light {
+    background-color: var(--light-secondary-color) !important;
+}
+
+.text-danger {
+    color: var(--primary-color) !important;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: #ffffff;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* ===== Navbar Links ===== */
+.navbar-nav .nav-link {
+    color: #151d30;
+    padding: 12px 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #89073c;
+}
+
+.active-sidebar {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.active-sidebar:hover {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.active-sidebar i {
+    color: #fff !important;
+}
+
+/* ===== Navbar Shadow on Scroll ===== */
+.navbar.shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Dropdown Menu ===== */
+.dropdown-menu {
+    border: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+    margin-top: 0;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* ===== Dropdown Arrow ===== */
+.dropdown-arrow {
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.show .dropdown-arrow {
+    transform: rotate(-180deg);
+}
+
+/* ===== Hover Effect on Desktop Only ===== */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+
+/* ================================
+   Button Styling
+================================ */
+.bg-gradient-primary {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color)) !important;
+    border: none !important;
+    color: var(--white-color);
+    padding: 12px 30px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color)) !important;
+    border: none !important;
+    color: var(--white-color);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color)) !important;
+    border: none !important;
+    color: var(--white-color) !important;
+    box-shadow: none !important;
+}
+/* ================================
+   Button Secondary
+================================ */
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 12px 30px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+/* ===== Register Button ===== */
+.btn-warning {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    font-weight: bold;
+    padding: 8px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* ================================
+   Smooth Scrolling & Section Highlight
+================================ */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Active link in the navbar */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* ================================
+   Responsive Styling
+================================ */
+
+@media (max-width: 768px) {
+    .top-bar .contact-info {
+        display: none;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+           .navbar-nav .nav-item {
+               background-color: transparent;
+               z-index: 9;
+               padding-bottom: 5px;
+           }
+}
+
+/* ================================
+   Animation
+================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Fade-in Animation ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-in, transform 0.8s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--white-color);
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-in-out forwards;
+}
+
+.hero .btn {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero .btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Hero Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive Hero Text */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+/* ===== Welcome Section Styling ===== */
+h4 {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-weight: 700;
+    color: var(--black-color);
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* ===== Quote Block Styling ===== */
+.border-primary .fst-italic {
+    font-size: 17px;
+}
+
+.border-start {
+    border-left-width: 4px !important;
+    border-left-style: solid !important;
+}
+
+.border-primary {
+    border-left-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+/* ===== Champion Section Styling ===== */
+.card {
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card h5 {
+    color: var(--primary-color);
+}
+
+.card img {
+    transition: filter 0.4s ease-in-out;
+}
+
+.card:hover img {
+    filter: brightness(0.9);
+}
+
+/* ===== Our Party Documents Styling ===== */
+.card-link {
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-link:hover {
+    transform: translateY(-5px);
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #89073c;
+    color: var(--white-color);
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+/* See Details Button */
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* ===== Manifesto Section Styling ===== */
+.icon {
+    color: var(--primary-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.card:hover .icon {
+    color: var(--secondary-color);
+}
+
+.info-box {
+    background-color: #f8f9fa;
+    /* Light background */
+    color: #151d30;
+    /* Dark text color */
+    border: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.info-box i {
+    color: #89073c;
+    /* Primary color for icons */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.info-box:hover {
+    background-color: #89073c;
+    color: #fff;
+    border-color: #89073c;
+    transform: translateY(-5px);
+}
+
+.info-box:hover i {
+    color: #fff;
+    transform: rotate(360deg);
+}
+
+/* ===== Responsive Styling ===== */
+@media (max-width: 768px) {
+    .carousel-caption {
+        max-width: 80% !important;
+        left: 10% !important;
+    }
+
+    .overlay {
+        font-size: 0.9rem;
+    }
+}
+
+/* ================================
+   JS-Based Style (Dynamic Highlight)
+================================ */
+
+/* Highlight active section */
+section.active {
+    background-color: #f8f9fa;
+    border-left: 5px solid var(--primary-color);
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+/* ================================
+   Footer Styling
+================================ */
+.custom-footer {
+    background-color: #151d30;
+    color: #ffffff;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+.custom-footer h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #89073c;
+    position: relative;
+}
+
+.custom-footer h5::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+}
+
+/* Links Styling */
+.custom-footer a {
+    color: var(--pale-grey);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.custom-footer a:hover {
+    color: #89073c;
+}
+
+/* Learn More Link */
+.learn-more-link {
+    color: #89073c;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.learn-more-link:hover {
+    transform: translateX(5px);
+}
+
+/* List Styling */
+.custom-footer ul {
+    padding-left: 0;
+}
+
+.custom-footer ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Icons in List */
+.custom-footer ul li i {
+    color: #f6f6f6;
+    margin-right: 8px;
+}
+
+.custom-footer h5 {
+    color: #f6f6f6;
+    margin-right: 8px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #858b80;
+    color: #89073c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--pale-grey);
+    transform: translateY(-3px);
+}
+
+/* Copyright Section */
+.copyright {
+    background-color: #858b80;
+    color: var(--pale-grey);
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .custom-footer {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Bulk Ordering Badge */
+.badge-wholesale {
+    font-size: 0.7rem;
+    z-index: 10;
+    border-bottom-right-radius: 0.5rem;
+}
+
+/* Breadcrumb */
+/* Prevent slash breaking weirdly */
+.breadcrumb-item+.breadcrumb-item::before {
+    white-space: nowrap;
+}
+
+/* Keep breadcrumb in one line */
+.breadcrumb-ellipsis {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Truncate only last item */
+.breadcrumb-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    /* allows shrinking */
+    min-width: 0;
+    /* needed for ellipsis in flexbox */
+}
